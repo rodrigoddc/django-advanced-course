@@ -5,3 +5,5 @@
 [![Python 3](https://pyup.io/repos/github/rodrigoddc/django-advanced-course/python-3-shield.svg)](https://pyup.io/repos/github/rodrigoddc/django-advanced-course/)
 
 Django advanced course, looking for The twelve-factor app
+
+Demo available at https://rodrigoddcpypro.herokuapp.com/
