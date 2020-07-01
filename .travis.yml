@@ -18,7 +18,6 @@ env:
     - PIPENV_VENV_IN_PROJECT=1
     - PIPENV_IGNORE_VIRTUALENVS=1
 
-
 install:
   - pip install -q pipenv codecov
   - pipenv sync --dev
@@ -27,7 +26,6 @@ install:
 before_install:
   - sudo cp /etc/postgresql/10/main/pg_hba.conf /etc/postgresql/12/main/pg_hba.conf
   - sudo pg_ctlcluster 12 main restart
-
 
 before_script:
   - psql -c 'create database testdb;' -U postgres
