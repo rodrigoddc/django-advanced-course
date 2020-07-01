@@ -5,7 +5,11 @@ python:
 services:
   - postgresql
 addons:
-  postgresql: "9.5"
+  postgresql: "12"
+  apt:
+    packages:
+    - postgresql-12
+    - postgresql-client-12
 
 env:
   global:
