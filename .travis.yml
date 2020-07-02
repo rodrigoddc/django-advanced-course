@@ -28,7 +28,7 @@ before_install:
   - sudo pg_ctlcluster 12 main restart
 
 before_script:
-  - psql -c 'create database testdb;' -U postgres
+  - psql -c 'create database pypro;' -U postgres
 
 script:
   - pipenv run flake8 .
