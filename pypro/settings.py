@@ -147,7 +147,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 # Whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-SENTRY_DSN = config('SENTRY_DSN')
+SENTRY_DSN = config('SENTRY_DSN', default=None)
 
 if SENTRY_DSN:
     # Sentry settings
