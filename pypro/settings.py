@@ -15,6 +15,7 @@ from functools import partial
 
 import dj_database_url
 import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
