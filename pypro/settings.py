@@ -14,9 +14,12 @@ import os
 from functools import partial
 
 import dj_database_url
+import sentry_sdk
 from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from sentry_sdk.integrations.django import DjangoIntegration
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -32,6 +35,17 @@ DEBUG = config('DEBUG', cast=bool)
 ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = 'base.User'
+
+# Sentry settings
+sentry_sdk.init(
+    dsn="https://6e0ffb9297fa4a4d81d7bc3fd690b6f5@o415179.ingest.sentry.io/5305880",
+    integrations=[DjangoIntegration()],
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)
+
 
 # Application definition
 
