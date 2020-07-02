@@ -35,17 +35,6 @@ ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = 'base.User'
 
-# Sentry settings
-sentry_sdk.init(
-    dsn="https://6e0ffb9297fa4a4d81d7bc3fd690b6f5@o415179.ingest.sentry.io/5305880",
-    integrations=[DjangoIntegration()],
-
-    # If you wish to associate users to errors (assuming you are using
-    # django.contrib.auth) you may enable sending PII data.
-    send_default_pii=True
-)
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -154,3 +143,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
 # Whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+SENTRY_DSN = config('SENTRY_DSN')
+
+if SENTRY_DSN:
+    # Sentry settings
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration()],
+        send_default_pii=True
+    )
