@@ -17,6 +17,7 @@ dj-database-url = "*"
 whitenoise = "*"
 django = "*"
 sentry-sdk = "*"
+django-debug-toolbar = "*"
 
 [requires]
 python_version = "3.8"
