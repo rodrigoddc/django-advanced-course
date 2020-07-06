@@ -151,7 +151,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 SENTRY_DSN = config('SENTRY_DSN', default=None)
 
-if SENTRY_DSN:
+if SENTRY_DSN is not None:
     # Sentry settings
     sentry_sdk.init(
         dsn=SENTRY_DSN,
