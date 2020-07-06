@@ -17,9 +17,11 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from apps.base import urls as base_urls
+from apps.videos import urls as videos_urls
 
 urlpatterns = [
     path('', include(base_urls)),
+    path('videos/', include(videos_urls)),
     path('admin/', admin.site.urls),
 ]
 
