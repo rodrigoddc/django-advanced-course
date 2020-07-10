@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import render_video
+from .views import video_render, video_list
 
 app_name = 'videos'
 urlpatterns = [
-    path('<slug:slug>/', render_video, name='render_video')
+    path('', video_list, name='video_list'),
+    path('<slug:slug>/', video_render, name='video_render'),
 ]

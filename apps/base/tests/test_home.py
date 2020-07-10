@@ -1,13 +1,6 @@
-import pytest
 from django.urls import reverse
 
 from pypro.django_assertions import assert_contains
-
-
-@pytest.fixture
-def response(client):
-    response = client.get(reverse('base:home'))
-    return response
 
 
 def test_status_code(response):

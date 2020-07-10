@@ -8,15 +8,14 @@
 {% block content %}
 
 <header>
-    <section class="jumbotron text-center">
+    <section class="jumbotron bg-white text-center">
         <div class="container">
             <h1 class="h1">The Brazil For Christ Church - Jd Adriane</h1>
             <p class="lead">Something short and leading about the
                 collection below—its contents, the creator, etc. Make it short and
                 sweet, but not too short so folks don’t simply skip over it entirely.</p>
             <p>
-                <a href="{% url 'videos:render_video' slug='motivation' %}" class="btn btn-primary my-2">See all videos</a>
-                <a href="" class="btn btn-secondary my-2">See all fotos</a>
+                <a href="{% url 'videos:video_list' %}" class="btn btn-secondary my-2">See all videos</a>
             </p>
         </div>
     </section>
