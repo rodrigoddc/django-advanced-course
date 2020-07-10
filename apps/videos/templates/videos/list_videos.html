@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} Video | Pypro {% endblock %}
+
+{% block content %}
+<header>
+    <div class="jumbotron bg-white text-center">
+        <h1 class="h1"> Videos List </h1>
+    </div>
+</header>
+<section>
+    <div class="container text-center">
+        {% for video in videos %}
+            <a href="{% url 'videos:video_render' slug=video.slug %}" class="btn btn-link my-2">{{ video.title }}</a>
+        {% empty %}
+            <h2 class="h2 my-2"> No videos to show </h2>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
