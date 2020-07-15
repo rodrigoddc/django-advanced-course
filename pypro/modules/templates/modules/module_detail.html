@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} Module | Pypro {% endblock %}
+
+{% block content %}
+<header>
+    <div class="jumbotron bg-white text-center">
+        <h1 class="h2"> {{ module.title }} </h1>
+    </div>
+</header>
+<section>
+    <div class="container text-center">
+
+        <dl>
+            <dt>Audience</dt>
+            <dd>{{ module.audience }}</dd>
+            <dt>Description</dt>
+            <dd>{{ module.description }}</dd>
+        </dl>
+
+    </div>
+</section>
+{% endblock %}

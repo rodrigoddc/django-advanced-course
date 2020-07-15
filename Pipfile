@@ -7,7 +7,7 @@ verify_ssl = true
 flake8 = "*"
 pytest-cov = "*"
 codecov = "*"
-model-mommy = "*"
+model-bakery = "*"
 
 [packages]
 gunicorn = "*"
@@ -19,6 +19,7 @@ whitenoise = "*"
 django = "*"
 sentry-sdk = "*"
 django-debug-toolbar = "*"
+django-ordered-model = "*"
 
 [requires]
 python_version = "3.8"

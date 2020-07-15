@@ -16,12 +16,16 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
-from apps.base import urls as base_urls
-from apps.videos import urls as videos_urls
 
+from pypro.base import urls as base_urls
+from pypro.modules import urls as modules_urls
+from pypro.videos import urls as videos_urls
+
+app_name = 'videos'
 urlpatterns = [
     path('', include(base_urls)),
     path('videos/', include(videos_urls)),
+    path('modules/', include(modules_urls)),
     path('admin/', admin.site.urls),
 ]
 
