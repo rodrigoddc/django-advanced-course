@@ -22,4 +22,4 @@ def response(client, modules):
 
 @pytest.fixture
 def response_module_detail(client, module):
-    return client.get(reverse('modules:detail', kwargs={'slug': module.slug}))
+    return client.get(reverse('modules:module_detail', kwargs={'slug': module.slug}))

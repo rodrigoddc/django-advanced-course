@@ -2,18 +2,20 @@ from django.db import models
 from django.urls import reverse
 from ordered_model.models import OrderedModel
 
+from pypro.modules.models import Module
 
-class Module(OrderedModel):
+
+class Class(OrderedModel):
     title = models.CharField(max_length=64)
-    audience = models.TextField()
-    description = models.TextField()
     slug = models.SlugField(unique=True)
+    module = models.ForeignKey(Module, on_delete=models.PROTECT)
+    order_with_respect_to = 'module'
 
     class Meta(OrderedModel.Meta):
-        pass
+        verbose_name_plural = 'Classes'
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('modules:module_detail', kwargs={'slug': self.slug})
+        return reverse('modules:class_detail', kwargs={'slug': self.slug})
