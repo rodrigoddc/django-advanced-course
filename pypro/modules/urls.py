@@ -1,10 +1,10 @@
 from django.urls import path
 
-from pypro.modules.views.view_module import detail_module
-from pypro.modules.views.view_class import detail_class
+from pypro.modules.views.view_module import module_detail
+from pypro.modules.views.view_class import lecture_detail
 
 app_name = 'modules'
 urlpatterns = [
-    path('<slug:slug>', detail_module, name='module_detail'),
-    path('<slug:slug>', detail_class, name='class_detail'),
+    path('<slug:slug>', module_detail, name='module_detail'),
+    path('lecture/<slug:slug>', lecture_detail, name='lecture_detail'),
 ]

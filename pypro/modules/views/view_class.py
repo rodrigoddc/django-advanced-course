@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
-from pypro.modules import facade
+from pypro.modules.models.model_class import Lecture
 
 
-def detail_class(request, slug):
-    module = facade.find_module(slug)
-    return render(request, 'modules/class_detail.html', context={'module': module})
+def lecture_detail(request, slug):
+    lecture = Lecture.objects.get(slug=slug)
+    return render(request, 'modules/lecture_detail.html', context={'lecture': lecture})

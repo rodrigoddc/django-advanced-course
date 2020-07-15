@@ -2,7 +2,7 @@ from django.contrib import admin
 from ordered_model.admin import OrderedModelAdmin
 
 from pypro.modules.models import Module
-from pypro.modules.models.model_class import Class
+from pypro.modules.models.model_class import Lecture
 
 
 class ModuleAdmin(OrderedModelAdmin):
@@ -10,7 +10,7 @@ class ModuleAdmin(OrderedModelAdmin):
     prepopulated_fields = {'slug': ('title', )}
 
 
-class ClassAdmin(OrderedModelAdmin):
+class LectureAdmin(OrderedModelAdmin):
     list_display = ('title', 'module', 'order', 'move_up_down_links')
     list_filter = ('module', )
     ordering = ('module', 'order')
@@ -18,4 +18,4 @@ class ClassAdmin(OrderedModelAdmin):
 
 
 admin.site.register(Module, ModuleAdmin)
-admin.site.register(Class, ClassAdmin)
+admin.site.register(Lecture, LectureAdmin)

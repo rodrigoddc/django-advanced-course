@@ -5,7 +5,7 @@ from ordered_model.models import OrderedModel
 from pypro.modules.models import Module
 
 
-class Class(OrderedModel):
+class Lecture(OrderedModel):
     title = models.CharField(max_length=64)
     slug = models.SlugField(unique=True)
     module = models.ForeignKey(Module, on_delete=models.PROTECT)

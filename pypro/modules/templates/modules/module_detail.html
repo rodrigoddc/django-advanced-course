@@ -18,7 +18,13 @@
             <dt>Description</dt>
             <dd>{{ module.description }}</dd>
         </dl>
-
+        <h2 class="h3"> Aulas </h2>
+        <ul>
+            {% for lecture in lectures %}
+                <li> <a href="{% url 'modules:lecture_detail' lecture.slug %}">{{ lecture.title }}</li>
+            {% empty %}
+            {% endfor %}
+        </ul>
     </div>
 </section>
 {% endblock %}
