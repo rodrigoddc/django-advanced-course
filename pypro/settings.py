@@ -49,8 +49,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # my apps
-    'apps.base',
-    'apps.videos',
+    'pypro.base',
+    'pypro.videos',
+    'pypro.modules',
+
+    'ordered_model',
 ]
 
 MIDDLEWARE = [
@@ -84,6 +87,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'pypro.modules.context_processors.modules_list',
             ],
         },
     },
@@ -151,7 +155,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 SENTRY_DSN = config('SENTRY_DSN', default=None)
 
-if SENTRY_DSN is not None:
+if not DEBUG:
     # Sentry settings
     sentry_sdk.init(
         dsn=SENTRY_DSN,
