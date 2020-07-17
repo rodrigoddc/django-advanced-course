@@ -4,6 +4,6 @@
 [![Updates](https://pyup.io/repos/github/rodrigoddc/django-advanced-course/shield.svg)](https://pyup.io/repos/github/rodrigoddc/django-advanced-course/)
 [![Python 3](https://pyup.io/repos/github/rodrigoddc/django-advanced-course/python-3-shield.svg)](https://pyup.io/repos/github/rodrigoddc/django-advanced-course/)
 
-Courses commerce project made in a Django advanced course, observing best practices such as twelve factor app concepts, CI/CD and using testing with pytest
+Courses commerce project made in a Django advanced course, observing best practices such as twelve factor app concepts, CI/CD and tests with pytest and codecov
 
 Demo available at https://rodrigoddcpypro.herokuapp.com/
