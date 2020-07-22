@@ -18,4 +18,4 @@ class Lecture(OrderedModel):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('modules:class_detail', kwargs={'slug': self.slug})
+        return reverse('modules:lecture_detail', kwargs={'slug': self.slug})

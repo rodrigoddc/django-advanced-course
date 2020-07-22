@@ -1,7 +1,7 @@
 from django.urls import path
 
 from pypro.modules.views.view_module import module_detail
-from pypro.modules.views.view_class import lecture_detail
+from pypro.modules.views.view_lecture import lecture_detail
 
 app_name = 'modules'
 urlpatterns = [

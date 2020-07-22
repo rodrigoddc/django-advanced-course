@@ -21,7 +21,7 @@
         <h2 class="h3"> Aulas </h2>
         <ul>
             {% for lecture in lectures %}
-                <li> <a href="{% url 'modules:lecture_detail' lecture.slug %}">{{ lecture.title }}</li>
+                <li> <a href="{{ lecture.get_absolute_url }}">{{ lecture.title }}</li>
             {% empty %}
             {% endfor %}
         </ul>

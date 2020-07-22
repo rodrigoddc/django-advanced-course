@@ -2,8 +2,8 @@ import pytest
 from django.urls import reverse
 from model_bakery import baker
 
-from pypro.modules.models.model_class import Lecture
-from pypro.modules.models.model_modules import Module
+from pypro.modules.models.model_lecture import Lecture
+from pypro.modules.models.model_module import Module
 
 
 @pytest.fixture
@@ -13,7 +13,7 @@ def module(db):
 
 @pytest.fixture
 def modules(db):
-    return baker.make(Module, 3)
+    return baker.make(Module, _quantity=3)
 
 
 @pytest.fixture
@@ -33,11 +33,6 @@ def response_modules(client, modules, lectures):
 
 @pytest.fixture
 def response_list(client, module, lectures):
-    return client.get(reverse('modules:module_detail', kwargs={'slug': module.slug}))
-
-
-@pytest.fixture
-def response_module_detail(client, module):
     return client.get(reverse('modules:module_detail', kwargs={'slug': module.slug}))
 
 

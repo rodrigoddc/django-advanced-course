@@ -1,7 +1,7 @@
-from pypro.modules import facade
+from pypro.modules.facades import facade_module
 
 
 def modules_list(request):
     return {
-        'MODULES': facade.modules_sorted_by_order()
+        'MODULES': facade_module.modules_sorted_by_order()
     }

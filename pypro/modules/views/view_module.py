@@ -1,9 +1,10 @@
 from django.shortcuts import render
 
-from pypro.modules import facade
+import pypro.modules.facades.facade_lecture
+from pypro.modules.facades import facade_module
 
 
 def module_detail(request, slug):
-    module = facade.find_module(slug)
-    lectures = facade.list_class_by_module(module)
+    module = facade_module.find_module(slug)
+    lectures = pypro.modules.facades.facade_lecture.list_lecture_by_module(module)
     return render(request, 'modules/module_detail.html', {'module': module, 'lectures': lectures})
