@@ -4,6 +4,14 @@
 {% block title %} Module | Pypro {% endblock %}
 
 {% block content %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'base:home' %}"> Home </a></li>
+    <li class="breadcrumb-item"><a href="{{ lecture.module.get_absolute_url }}"> {{ lecture.module.title }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ lecture.title }}</li>
+  </ol>
+</nav>
+
 <header>
     <div class="jumbotron bg-white text-center">
         <h1 class="h2"> {{ lecture.title }} </h1>
@@ -11,6 +19,9 @@
 </header>
 <section>
     <div class="container text-center">
+        <div class="embed-responsive embed-responsive-4by3">
+            <iframe src="https://player.vimeo.com/video/{{ lecture.vimeo_id }}" class="embed-responsive-item" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
     </div>
 </section>
 {% endblock %}

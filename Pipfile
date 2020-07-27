@@ -8,6 +8,8 @@ flake8 = "*"
 pytest-cov = "*"
 codecov = "*"
 model-bakery = "*"
+ipython = "*"
+django-extensions = "*"
 
 [packages]
 gunicorn = "*"

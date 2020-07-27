@@ -1,7 +1,7 @@
 from django.contrib import admin
 from ordered_model.admin import OrderedModelAdmin
 
-from pypro.modules.models import Module
+from pypro.modules.models.model_module import Module
 from pypro.modules.models.model_lecture import Lecture
 
 

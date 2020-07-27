@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} Module | Pypro {% endblock %}
+
+{% block content %}
+<header>
+    <div class="jumbotron bg-white text-center">
+        <h1 class="h2"> Modules List </h1>
+    </div>
+</header>
+<section>
+    <div class="container text-center">
+        <ul>
+            {% for module in modules %}
+                <li> <a href="{{ module.get_absolute_url }}">{{ module.title }}</li>
+            {% empty %}
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endblock %}

@@ -32,6 +32,11 @@ def response_modules(client, modules, lectures):
 
 
 @pytest.fixture
+def response_modules_list(client, lectures):
+    return client.get(reverse('modules:module_list'))
+
+
+@pytest.fixture
 def response_list(client, module, lectures):
     return client.get(reverse('modules:module_detail', kwargs={'slug': module.slug}))
 
