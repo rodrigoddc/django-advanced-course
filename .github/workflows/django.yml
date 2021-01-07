@@ -17,6 +17,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      env:
+        SECRET_KEY:  'SOME_SCRET_KEY'
+        DEBUG:  true
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
@@ -25,9 +28,9 @@ jobs:
       uses: VaultVulp/action-pipenv@v2.0.1
       with:
         command: install -d
-    - name: Run Tests
+    - name: Run tests with pipenv and pytest
       run: |
-        python manage.py test
+        pipenv run pytest
     - name: Code best pratices style
       run: |
-        flake8
+        pipenv run flake8
