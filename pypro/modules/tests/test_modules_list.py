@@ -1,7 +1,3 @@
-from pypro.django_assertions import assert_contains
-from pypro.modules.models.model_module import Module
-
-
 def test_modules_title(response_modules_list, module):
     assert response_modules_list.status_code == 200
 #
