@@ -13,21 +13,36 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        python-version: [3.8]
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
+      env:
+        SECRET_KEY:  'SOME_SCRET_KEY'
+        DEBUG:  true
+    
+    
+    # Setup Python (faster than using Python container)
+    - name: Setup Python 3.8
       uses: actions/setup-python@v2
       with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependecies
-      uses: VaultVulp/action-pipenv@v2.0.1
-      with:
-        command: install -d
-    - name: Run Tests
+        python-version: "3.8"
+
+    - name: Install pipenv
       run: |
-        python manage.py test
+        python3 -m pip install --upgrade pipenv wheel
+    
+    - name: Display Python version
+      run: python3 --version
+    
+    - name: Install dependecies
+      run: |
+        pipenv install -d
+    
+    - name: Run tests with pipenv and pytest
+      run: |
+        pipenv run pytest
+    
     - name: Code best pratices style
       run: |
-        flake8
+        pipenv run flake8
