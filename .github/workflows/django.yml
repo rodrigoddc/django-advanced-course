@@ -13,7 +13,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.9]
+        python-version: [3.8]
 
     steps:
     - uses: actions/checkout@v2
@@ -23,10 +23,10 @@ jobs:
     
     
     # Setup Python (faster than using Python container)
-    - name: Setup Python
+    - name: Setup Python 3.8
       uses: actions/setup-python@v2
       with:
-        python-version: "3.9"
+        python-version: "3.8"
 
     - name: Install pipenv
       run: |
