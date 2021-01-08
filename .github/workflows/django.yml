@@ -33,7 +33,7 @@ jobs:
         python3 -m pip install --upgrade pipenv wheel
     
     - name: Display Python version
-      run: python3 -v
+      run: python3 --version
     
     - name: Install dependecies
       run: |
