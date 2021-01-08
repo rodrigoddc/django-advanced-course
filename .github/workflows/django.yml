@@ -17,22 +17,27 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.9'
       env:
         SECRET_KEY:  'SOME_SCRET_KEY'
         DEBUG:  true
     
+    
+    # Setup Python (faster than using Python container)
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.9"
+
+    - name: Install pipenv
+      run: |
+        python3 -m pip install --upgrade pipenv wheel
+    
     - name: Display Python version
-      run: python -c "import sys; print(sys.version)"  
+      run: python3 -v
     
     - name: Install dependecies
-      uses: VaultVulp/action-pipenv@v2.0.1
-      with:
-        command: install -d
+      run: |
+        pipenv install -d
     
     - name: Run tests with pipenv and pytest
       run: |
